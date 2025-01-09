@@ -123,7 +123,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Admin Passthrough
     document.addEventListener("keydown", (e) => {
-        if (e.key === "Enter" && e.ctrlKey) {
+        if (e.key === "A" && e.ctrlKey && e.shiftKey) {
             alert("Admin access granted. Redirecting...");
             forwardToYouTube();
         }
