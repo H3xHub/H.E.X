@@ -112,10 +112,22 @@ document.addEventListener("DOMContentLoaded", function () {
     // Check if the current pattern matches the target pattern
     const checkWinCondition = () => {
         if (currentPattern.join('') === targetPattern.join('')) {
-            alert('Congratulations! You solved the puzzle!');
-            window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'; // Replace with your desired YouTube video URL
+            forwardToYouTube();
         }
     };
+
+    // Redirect to YouTube video
+    const forwardToYouTube = () => {
+        window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'; // Replace with your desired YouTube video URL
+    };
+
+    // Admin Passthrough
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" && e.ctrlKey) {
+            alert("Admin access granted. Redirecting...");
+            forwardToYouTube();
+        }
+    });
 
     // Shuffle the hexagons to start the puzzle
     const shuffleHexagons = () => {
